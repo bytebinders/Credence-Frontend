@@ -8,7 +8,7 @@ export default function Layout() {
       </a>
       <header
         style={{
-          padding: '1rem 2rem',
+          padding: '1rem var(--container-padding)',
           borderBottom: '1px solid #e2e8f0',
           background: '#fff',
           display: 'flex',
@@ -24,9 +24,31 @@ export default function Layout() {
           <Link to="/trust">Trust Score</Link>
         </nav>
       </header>
-      <main id="main-content" style={{ flex: 1, padding: '2rem' }}>
+      <main
+        id="main-content"
+        style={{
+          flex: 1,
+          padding: 'var(--space-6) var(--container-padding)',
+          maxWidth: 'var(--container-max)',
+          margin: '0 auto',
+          width: '100%',
+        }}
+      >
         <Outlet />
       </main>
     </div>
   )
 }
+```
+
+---
+
+## What changed (so you understand it):
+- `padding: '1rem 2rem'` → `padding: '1rem var(--container-padding)'` on header
+- `padding: '2rem'` → fluid padding + max-width on main
+
+---
+
+Commit message:
+```
+feat(design): unify responsive breakpoints and section spacing
