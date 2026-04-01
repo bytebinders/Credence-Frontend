@@ -26,7 +26,16 @@ export default function Layout() {
         </nav>
         <ThemeToggle />
       </header>
-      <main id="main-content" style={{ flex: 1, padding: '2rem' }}>
+      <main
+        id="main-content"
+        style={{
+          flex: 1,
+          padding: 'var(--space-6) var(--container-padding)',
+          maxWidth: 'var(--container-max)',
+          margin: '0 auto',
+          width: '100%',
+        }}
+      >
         <Outlet />
       </main>
     </div>
